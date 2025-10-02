@@ -19,6 +19,7 @@ int main() {
     float densidade1, densidade2;
     float pibperCap1, pibperCap2;
     float superPoder1, superPoder2;
+    int atributo;
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -104,16 +105,96 @@ int main() {
 
     //Comparação com estrutura de decisão
 
-    printf("Comparação de Cartas (Atributo: População): \n");
-    printf("Carta 1 - %s(%c%s): %d\n", nome1, estado1, cod1, popu1);
-    printf("Carta 2 - %s(%c%s): %d\n", nome2, estado2, cod2, popu2);
+    printf("Comparação de Cartas: \n");
+    printf("1. Nome do país\n");
+    printf("2. População\n");
+    printf("3. Área\n");
+    printf("4. PIB\n");
+    printf("5. Número de pontos turísticos\n");
+    printf("6. Densidade demográfica\n");
+    printf("Escolha um atributo: ");
+    printf("%d", &atributo);
 
-    if (popu1 > popu2) {
-        printf("Resultado: Carta 1 (%s) venceu!", nome1);
+    switch (atributo)
+    {
+    case 1:
+        printf("Carta 1 - %s \n", nome1);
+        printf("Carta 2 - %s \n", nome2);
+    break;
+    case 2:
+        printf("Comparação População: \n");
+        printf("População carta 1 - %s: %d\n", nome1, popu1);
+        printf("População carta 2 - %s: %d\n", nome2, popu2);
+        if(popu1 == popu2){
+            printf("---Empate!---");
+        }
+        else if(popu1 > popu2){
+            printf("---Carta 1 Venceu!---");
+        }
+        else{
+            printf("---Carta 2 Venceu!---");
+        }
+    break;
+    case 3:
+        printf("Comparação Área: \n");
+        printf("Área carta 1 - %s: %.2f\n", nome1, area1);
+        printf("Área carta 2 - %s: %.2f\n", nome2, area2);
+        if(area1 == area2){
+            printf("---Empate!---");
+        }
+        else if(area1 > area2){
+            printf("---Carta 1 Venceu!---");
+        }
+        else{
+            printf("---Carta 2 Venceu!---");
+        }
+    break;
+    case 4:
+        printf("Comparação PIB: \n");
+        printf("PIB carta 1 - %s: %.2f\n", nome1, pib1);
+        printf("PIB carta 2 - %s: %.2f\n", nome2, pib2);
+        if(pib1 == pib2){
+            printf("---Empate!---");
+        }
+        else if(pib1 > pib2){
+            printf("---Carta 1 Venceu!---");
+        }
+        else{
+            printf("---Carta 2 Venceu!---");
+        }
+    break;
+    case 5:
+        printf("Comparação Pontos turísticos: \n");
+        printf("Pontos turísticos carta 1 - %s: %d\n", nome1, npt1);
+        printf("Pontos turísticos carta 2 - %s: %d\n", nome2, npt2);
+        if(npt1 == npt2){
+            printf("---Empate!---");
+        }
+        else if(npt1 > npt2){
+            printf("---Carta 1 Venceu!---");
+        }
+        else{
+            printf("---Carta 2 Venceu!---");
+        }
+    break;
+    case 6:
+        printf("Comparação Densidade: \n");
+        printf("Densidade carta 1 - %s: %.2f\n", nome1, densidade1);
+        printf("Densidade carta 2 - %s: %.2f\n", nome2, densidade2);
+        if(densidade1 == densidade2){
+            printf("---Empate!---");
+        }
+        else if(densidade1 < densidade2){
+            printf("---Carta 1 Venceu!---");
+        }
+        else{
+            printf("---Carta 2 Venceu!---");
+        }
+    break;
+    default:
+    printf("Opção inválida! Tente novamente.");
+    break;
     }
-    else{
-        printf("Resultado: Carta 2 (%s) venceu!", nome2);
-    }   
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
 
